@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "Sample — Sign in to Wallet",
+    "slug": "sample-wallet",
+    "figma": { "url": "https://www.figma.com/design/EXAMPLE/sample?node-id=1-2", "fileKey": "EXAMPLE", "nodeId": "1:2" },
+    "platform": "mobile",
+    "viewport": { "width": 390, "height": 844 },
+    "start": "welcome",
+    "approval": { "approved": true, "at": "2026-10-26", "assumptions": ["Sample data only — this flow exists to self-test the template."] }
+  },
+  "screens": [
+    { "id": "welcome", "name": "Welcome", "figmaNodeId": "1:10", "kind": "screen", "status": "confirmed" },
+    { "id": "phone", "name": "Enter phone", "figmaNodeId": "1:20", "kind": "screen", "status": "confirmed" },
+    { "id": "home", "name": "Home", "figmaNodeId": "1:30", "kind": "screen", "status": "confirmed" },
+    { "id": "send-sheet", "name": "Send money sheet", "figmaNodeId": "1:40", "kind": "sheet", "status": "inferred" }
+  ],
+  "interactions": [
+    { "id": "welcome.get-started", "screen": "welcome", "element": "get-started", "actions": [{ "type": "navigate", "to": "phone", "transition": "push" }], "status": "confirmed", "source": "figma prototype reaction" },
+    { "id": "phone.back", "screen": "phone", "element": "back", "actions": [{ "type": "back" }], "status": "inferred", "source": "chevron in nav bar" },
+    { "id": "phone.continue", "screen": "phone", "element": "continue", "actions": [{ "type": "loading", "ms": 900 }, { "type": "reset", "to": "home", "transition": "push" }], "status": "inferred", "source": "button label 'Continue'; OTP screen skipped by user decision" },
+    { "id": "home.send", "screen": "home", "element": "send", "actions": [{ "type": "open", "overlay": "send-sheet" }], "status": "inferred", "source": "naming: 'Send money sheet'" },
+    { "id": "send-sheet.contact-ada", "screen": "send-sheet", "element": "contact-ada", "actions": [{ "type": "close" }, { "type": "toast", "text": "₦25,000 sent to Ada" }], "status": "assumed", "source": "approved assumption" }
+  ],
+  "initialState": { "values": {}, "flags": {} },
+  "branches": [],
+  "gaps": [{ "id": "otp", "severity": "optional", "description": "No OTP screen in the file", "resolution": "User approved skipping straight to Home" }],
+  "demo": {
+    "steps": [
+      { "do": "tap", "target": "get-started" },
+      { "do": "type", "target": "phone", "text": "803 555 0142" },
+      { "do": "tap", "target": "continue" },
+      { "do": "scroll", "to": "end" },
+      { "do": "scroll", "to": "top", "ms": 1000 },
+      { "do": "tap", "target": "send" },
+      { "do": "tap", "target": "contact-ada" }
+    ]
+  }
+}

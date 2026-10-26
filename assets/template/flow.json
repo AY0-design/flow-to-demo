@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "meta": {
+    "name": "Untitled flow",
+    "slug": "untitled-flow",
+    "figma": { "url": "", "fileKey": "", "nodeId": "" },
+    "platform": "mobile",
+    "viewport": { "width": 390, "height": 844 },
+    "start": "",
+    "approval": { "approved": false, "assumptions": [] }
+  },
+  "screens": [],
+  "interactions": [],
+  "initialState": { "values": {}, "flags": {} },
+  "branches": [],
+  "gaps": [],
+  "demo": { "steps": [] }
+}

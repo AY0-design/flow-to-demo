@@ -1,0 +1,38 @@
+{
+  "name": "flow-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "typecheck": "tsc --noEmit",
+    "validate": "node tools/validate-flow.mjs",
+    "test": "playwright test",
+    "studio": "remotion studio src/video/index.ts",
+    "render": "tsx tools/render.ts",
+    "qa:visual": "node tools/visual-diff.mjs",
+    "qa:video": "tsx tools/check-video.ts",
+    "qa": "npm run validate && npm run typecheck && npm run build && npm test && npm run qa:visual && npm run render && npm run qa:video"
+  },
+  "dependencies": {
+    "motion": "^14.6.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "4.0.538"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@remotion/cli": "4.0.538",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "pixelmatch": "^8.0.0",
+    "pngjs": "^7.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.5",
+    "tsx": "^4.21.0"
+  }
+}

@@ -1,0 +1,8 @@
+/* Design tokens extracted from Figma (get_variable_defs + get_design_context).
+   Keep names close to the Figma variable names so they can be traced back. */
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --screen-bg: #ffffff;
+  --text: #0f1115;
+  --scrim: rgba(10, 12, 16, 0.42);
+}

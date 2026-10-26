@@ -1,0 +1,23 @@
+{
+  "background": "#EDEEF1",
+  "frame": "rounded",
+  "cornerRadius": 44,
+  "padding": 72,
+  "shadow": true,
+  "fps": 60,
+  "scale": 2,
+  "speed": 1,
+  "loop": false,
+  "cursor": "auto",
+  "output": { "width": null, "height": null },
+  "timing": {
+    "leadInMs": 1200,
+    "holdAfterTransitionMs": 1300,
+    "pressMs": 220,
+    "typingCharMs": 85,
+    "scrollMs": 1400,
+    "outroMs": 1500
+  },
+  "transitions": { "push": 460, "fade": 320, "rise": 480, "overlay": 380 },
+  "poster": { "step": "auto" }
+}
